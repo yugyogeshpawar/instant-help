@@ -10,10 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(build.sourcesDirectory)'
-    includeRootFolder: false
+
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
@@ -22,3 +19,4 @@ steps:
     WebAppName: 'yogesh-web'
     packageForLinux: '$(System.DefaultWorkingDirectory)/'
     RuntimeStack: 'STATICSITE|1.0'
+
